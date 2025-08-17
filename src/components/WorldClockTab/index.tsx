@@ -8,7 +8,6 @@ import {
   getTimezoneAbbreviation,
 } from "../utils";
 
-// World Clock Component - HAS TIMER (needs real-time updates)
 export const WorldClockTab: React.FC = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
 

@@ -6,7 +6,7 @@ import {
   type SupportedTimezone,
 } from "timezone-shift";
 import { TIMEZONES } from "../constants";
-import { ConversionResult } from "../types";
+import type { ConversionResult } from "../types";
 import {
   convertBetweenTimezones,
   formatDate,
@@ -15,7 +15,6 @@ import {
   getTimezoneAbbreviation,
 } from "../utils";
 
-// Time Converter Component - NO TIMER (static, only updates on user input)
 export const ConverterTab: React.FC = () => {
   const [sourceTime, setSourceTime] = useState("");
   const [sourceDate, setSourceDate] = useState(

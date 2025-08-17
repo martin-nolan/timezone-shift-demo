@@ -12,7 +12,6 @@ import {
 import { TIMEZONES } from "../constants";
 import { formatTime, getLocalTime, getTimezoneAbbreviation } from "../utils";
 
-// API Demo Component - Interactive API showcase
 export const APIDemoTab: React.FC = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
   const [selectedTimezone, setSelectedTimezone] =

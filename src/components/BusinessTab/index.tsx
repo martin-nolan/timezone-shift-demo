@@ -3,7 +3,6 @@ import { isDST, inWorkingHours } from "timezone-shift";
 import { TIMEZONES } from "../constants";
 import { formatTime, getLocalTime, getTimezoneAbbreviation } from "../utils";
 
-// Business Hours Component - HAS TIMER (needs real-time updates)
 export const BusinessTab: React.FC = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
 

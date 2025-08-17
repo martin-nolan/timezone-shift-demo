@@ -11,7 +11,6 @@ import "./TimezoneDemo.css";
 import { WorldClockTab } from "./WorldClockTab";
 import "./WorldClockTab/index.css";
 
-// Main Component - NO TIMER (just handles tab switching)
 export const TimezoneDemo: React.FC = () => {
   const [activeTab, setActiveTab] = useState<
     "world" | "converter" | "dst" | "business" | "api"

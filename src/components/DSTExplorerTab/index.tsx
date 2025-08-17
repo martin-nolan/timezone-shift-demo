@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { dstTransitionDates } from "timezone-shift";
 import { TIMEZONES } from "../constants";
-import { DstData } from "../types";
+import type { DstData } from "../types";
 import { formatTime } from "../utils";
 
-// DST Explorer Component - NO TIMER (static, only updates on year change)
 export const DSTExplorerTab: React.FC = () => {
   const [dstYear, setDstYear] = useState(new Date().getFullYear());
   const [dstData, setDstData] = useState<DstData[]>([]);
