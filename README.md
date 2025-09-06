@@ -64,12 +64,6 @@ This is a modern React + TypeScript demo app showcasing all capabilities of the 
 - The API Demo tab lets you interactively test all timezone-shift endpoints
 - All time calculations automatically handle DST/BST transitions
 
-## Project Structure
-
-- `src/components/TimezoneDemo.tsx` — Main demo component with all tabs
-- `src/components/TimezoneDemo.css` — Modern dark theme styles
-- `public/` — Static assets
-
 ## Customization
 
 - Add more cities/timezones in `TIMEZONES` array in `TimezoneDemo.tsx`
