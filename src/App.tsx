@@ -1,5 +1,5 @@
 import { TimezoneDemo } from "./components/TimezoneDemo";
-import "./components/TimezoneDemo.css";
+import "./styles/index.css";
 
 function App() {
   return <TimezoneDemo />;

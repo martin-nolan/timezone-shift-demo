@@ -1,15 +1,10 @@
 import React, { useState } from "react";
 import { APIDemoTab } from "./APIDemoTab";
-import "./APIDemoTab/index.css";
 import { BusinessTab } from "./BusinessTab";
-import "./BusinessTab/index.css";
 import { ConverterTab } from "./ConverterTab";
-import "./ConverterTab/index.css";
 import { DSTExplorerTab } from "./DSTExplorerTab";
-import "./DSTExplorerTab/index.css";
-import "./TimezoneDemo.css";
 import { WorldClockTab } from "./WorldClockTab";
-import "./WorldClockTab/index.css";
+import { HeroSection, TimezoneErrorBoundary } from "./shared";
 
 export const TimezoneDemo: React.FC = () => {
   const [activeTab, setActiveTab] = useState<
@@ -52,44 +47,16 @@ export const TimezoneDemo: React.FC = () => {
       </nav>
 
       {/* Hero section only shows on World Clock tab */}
-      {activeTab === "world" && (
-        <div className="hero-header">
-          <div className="floating-elements">
-            <div className="floating-clock">🕐</div>
-            <div className="floating-globe">🌍</div>
-            <div className="floating-time">⏰</div>
-          </div>
-
-          <div className="hero-content">
-            <h1 className="hero-title">
-              <span className="gradient-text">Timezone Shift</span>
-            </h1>
-            <p className="hero-description">
-              Explore the power of the{" "}
-              <a
-                className="gradient-text"
-                href="https://www.npmjs.com/package/timezone-shift"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  textDecoration: "underline",
-                }}
-              >
-                timezone-shift
-              </a>{" "}
-              library with this comprehensive demo showcasing all capabilities
-              across multiple timezones with a modern, interactive interface.
-            </p>
-          </div>
-        </div>
-      )}
+      {activeTab === "world" && <HeroSection />}
 
       <div className="tab-content">
-        {activeTab === "world" && <WorldClockTab />}
-        {activeTab === "converter" && <ConverterTab />}
-        {activeTab === "dst" && <DSTExplorerTab />}
-        {activeTab === "business" && <BusinessTab />}
-        {activeTab === "api" && <APIDemoTab />}
+        <TimezoneErrorBoundary>
+          {activeTab === "world" && <WorldClockTab />}
+          {activeTab === "converter" && <ConverterTab />}
+          {activeTab === "dst" && <DSTExplorerTab />}
+          {activeTab === "business" && <BusinessTab />}
+          {activeTab === "api" && <APIDemoTab />}
+        </TimezoneErrorBoundary>
       </div>
     </div>
   );

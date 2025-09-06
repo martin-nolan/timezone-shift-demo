@@ -1,0 +1,417 @@
+/* Shared Component Styles */
+
+/* Container Utilities */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.container-wide {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+/* Card Components */
+.card {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: var(--space-xl);
+  border: 1px solid var(--border-color);
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent-primary);
+}
+
+.card-compact {
+  padding: var(--space-lg);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.card-header .flag {
+  font-size: var(--font-xl);
+}
+
+.card-header .title {
+  font-size: var(--font-xl);
+  font-weight: 600;
+  color: var(--text-primary);
+  flex: 1;
+}
+
+.card-header .subtitle {
+  font-size: var(--font-sm);
+  color: var(--text-muted);
+  background: var(--tertiary-bg);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--border-radius-sm);
+  font-family: "JetBrains Mono", monospace;
+}
+
+/* Card with top accent */
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-primary);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.card:hover::before {
+  transform: scaleX(1);
+}
+
+.card.accent-secondary::before {
+  background: var(--gradient-secondary);
+}
+
+.card.accent-tertiary::before {
+  background: var(--gradient-tertiary);
+}
+
+.card.accent-success::before {
+  background: var(--success-color);
+}
+
+/* Status Badges */
+.badge {
+  font-size: var(--font-xs);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: 20px;
+  font-weight: 500;
+  transition: var(--transition-smooth);
+  display: inline-block;
+}
+
+.badge-success {
+  background: linear-gradient(135deg, var(--success-color), #059669);
+  color: white;
+}
+
+.badge-warning {
+  background: linear-gradient(135deg, var(--warning-color), #f97316);
+  color: white;
+}
+
+.badge-error {
+  background: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+}
+
+.badge-inactive {
+  background: rgba(107, 114, 128, 0.2);
+  color: var(--text-muted);
+}
+
+.badge-dst-active {
+  background: linear-gradient(
+    135deg,
+    rgba(245, 158, 11, 0.2),
+    rgba(249, 115, 22, 0.2)
+  );
+  color: #fbbf24;
+}
+
+/* Form Elements */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.form-label {
+  font-weight: 500;
+  color: var(--text-primary);
+  font-size: var(--font-sm);
+}
+
+.form-input,
+.form-select {
+  padding: var(--space-md);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--tertiary-bg);
+  color: var(--text-primary);
+  font-family: "JetBrains Mono", monospace;
+  font-size: var(--font-base);
+  transition: var(--transition-smooth);
+}
+
+.form-input:focus,
+.form-select:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.form-input:hover,
+.form-select:hover {
+  border-color: var(--accent-primary);
+}
+
+/* Buttons */
+.btn {
+  padding: var(--space-md) var(--space-xl);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: var(--font-base);
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+}
+
+.btn-primary {
+  background: var(--gradient-primary);
+  color: white;
+}
+
+.btn-secondary {
+  background: var(--tertiary-bg);
+  color: var(--text-secondary);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-round {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  padding: 0;
+}
+
+/* Time Display */
+.time-display {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.time-display-large {
+  font-size: 2.5rem;
+}
+
+.time-display-medium {
+  font-size: 1.8rem;
+}
+
+.time-display-small {
+  font-size: 1.5rem;
+}
+
+/* Status Indicators */
+.status-light {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  transition: var(--transition-smooth);
+  box-shadow: 0 0 10px currentColor;
+}
+
+.status-light-success {
+  background: var(--success-color);
+  color: var(--success-color);
+}
+
+.status-light-error {
+  background: var(--error-color);
+  color: var(--error-color);
+}
+
+/* Detail Lists */
+.detail-list {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  padding: var(--space-md);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-sm) 0;
+  font-size: var(--font-sm);
+}
+
+.detail-item:not(:last-child) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.detail-item .label {
+  color: var(--text-muted);
+}
+
+.detail-item .value {
+  color: var(--text-primary);
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 500;
+}
+
+/* Timezone Abbreviation */
+.timezone-abbr {
+  font-family: "JetBrains Mono", monospace;
+  font-size: var(--font-sm);
+  color: var(--accent-primary);
+  background: rgba(59, 130, 246, 0.1);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--border-radius-sm);
+  display: inline-block;
+}
+
+/* Code Blocks */
+.code-block {
+  background: var(--primary-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: var(--space-md);
+  margin-bottom: var(--space-md);
+  overflow-x: auto;
+}
+
+.code-block pre {
+  margin: 0;
+  font-family: "Monaco", "Menlo", "Ubuntu Mono", monospace;
+  font-size: var(--font-sm);
+  color: var(--text-primary);
+  white-space: pre-wrap;
+  line-height: 1.4;
+}
+
+/* Result Blocks */
+.result-block {
+  background: var(--secondary-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: var(--space-md);
+  font-family: "Monaco", "Menlo", "Ubuntu Mono", monospace;
+  font-size: var(--font-sm);
+  color: var(--text-secondary);
+  white-space: pre-wrap;
+  line-height: 1.4;
+}
+
+/* API Example Styles */
+.api-example {
+  margin-bottom: var(--space-lg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--card-bg);
+}
+
+.api-example .function-name {
+  background: var(--primary-bg);
+  padding: var(--space-sm) var(--space-md);
+  font-family: "JetBrains Mono", monospace;
+  font-size: var(--font-sm);
+  font-weight: 600;
+  color: var(--accent-primary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.api-example .code-block {
+  padding: var(--space-md);
+  background: var(--tertiary-bg);
+  border-bottom: 1px solid var(--border-color);
+  margin: 0;
+}
+
+.api-example .result {
+  padding: var(--space-md);
+  background: var(--secondary-bg);
+  font-family: "JetBrains Mono", monospace;
+  font-size: var(--font-sm);
+  color: var(--text-primary);
+}
+
+/* Status Badges Container */
+.status-badges {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-lg);
+}
+
+/* Card Details Grid */
+.card-details {
+  margin-top: var(--space-lg);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--border-color);
+}
+
+.detail-grid {
+  display: grid;
+  gap: var(--space-sm);
+}
+
+/* Transitions Result */
+.transitions-result {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.transition {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-sm);
+  background: var(--tertiary-bg);
+  border-radius: var(--border-radius-sm);
+}
+
+.transition .label {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.transition .value {
+  color: var(--text-primary);
+  font-family: "JetBrains Mono", monospace;
+  font-size: var(--font-sm);
+}
+
+.no-transitions {
+  display: block;
+  padding: var(--space-lg);
+  text-align: center;
+  color: var(--text-muted);
+  font-style: italic;
+  background: var(--tertiary-bg);
+  border-radius: var(--border-radius-sm);
+  white-space: normal;
+  word-wrap: break-word;
+  line-height: 1.5;
+  font-size: var(--font-sm);
+  border: 1px solid var(--border-color);
+}

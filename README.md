@@ -1,14 +1,42 @@
 # Timezone Shift Demo
 
-This is a modern React + TypeScript demo app showcasing all capabilities of the [timezone-shift](https://www.npmjs.com/package/timezone-shift) library. It features interactive tabs, real-time clocks, business hour calculations, DST exploration, and a full API demonstration.
+This is a modern React + TypeScript demo app showcasing all capabilities of the [timezone-shift](https://www.npmjs.com/package/timezone-shift) library (v0.1.2+). It features interactive tabs, real-time clocks, business hour calculations, DST exploration, comprehensive error handling, and a full API demonstration including the latest auto-detection features.
 
-## Features
+## ✨ Features
 
-- 🌍 **World Clock**: Real-time clocks for major cities, automatic DST/BST handling
+- 🌍 **World Clock**: Real-time clocks for major cities with automatic DST/BST handling
 - 🔄 **Time Converter**: Convert times between any supported timezones
 - 🌞 **DST Explorer**: Visualize daylight saving transitions and rules
 - 💼 **Business Hours**: See if a city is currently in business hours
 - 🛠️ **API Demo**: Interactive playground for all timezone-shift functions
+- 🚀 **Auto-Detection**: New auto-detection functions (isDSTNow, formatNow, etc.)
+- 🔧 **Runtime Registry**: Dynamic timezone registration and cache management
+- 🛡️ **Error Boundaries**: Comprehensive error handling for robust UX
+- ⚡ **Performance Optimized**: React.memo, useMemo, and efficient re-renders
+
+## 🆕 Latest Updates
+
+### New Auto-Detection Functions
+
+- `isDSTNow()` - Check current DST status automatically
+- `getCurrentTimezoneParts()` - Get current time parts for user's timezone
+- `inWorkingHoursNow()` - Check if currently in business hours
+- `formatNow()` - Format current time with auto-detection
+- `getDetectedTimezone()` - Get user's detected timezone
+- `getTimezoneInfo()` - Get comprehensive timezone information
+
+### Runtime Registry Features
+
+- `validateAndRegisterTimezone()` - Dynamic timezone registration
+- `clearRuntimeTimezoneCache()` - Cache management utilities
+
+### Performance & Architecture Improvements
+
+- Optimized component re-renders with React.memo
+- Memoized expensive calculations
+- Error boundary implementation
+- TypeScript strict mode compliance
+- ESLint zero-warnings compliance
 
 ## Tech Stack
 
