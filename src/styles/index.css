@@ -1,0 +1,179 @@
+/* Main Styles Entry Point */
+@import "./globals.css";
+@import "./components.css";
+@import "./utilities.css";
+@import "./responsive.css";
+
+/* App-specific styles */
+.timezone-demo {
+  min-height: 100vh;
+  background: var(--primary-bg);
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero-header {
+  position: relative;
+  padding: var(--space-2xl) var(--space-xl);
+  text-align: center;
+  background: var(--primary-bg);
+  overflow: hidden;
+}
+
+.floating-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.floating-clock,
+.floating-globe,
+.floating-time {
+  position: absolute;
+  font-size: var(--font-3xl);
+  opacity: 0.1;
+  animation: float 6s ease-in-out infinite;
+}
+
+.floating-clock {
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.floating-globe {
+  top: 30%;
+  right: 15%;
+  animation-delay: 2s;
+}
+
+.floating-time {
+  bottom: 20%;
+  left: 15%;
+  animation-delay: 4s;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 700;
+  margin-bottom: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.gradient-text {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease-in-out infinite;
+}
+
+.subtitle {
+  font-size: 0.6em;
+  font-weight: 300;
+  color: var(--text-secondary);
+  letter-spacing: 0.1em;
+}
+
+.hero-description {
+  font-size: var(--font-lg);
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.hero-description a {
+  color: #7ed6df;
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+
+.hero-description a:hover {
+  color: var(--accent-primary);
+}
+
+/* Tab Navigation */
+.tab-navigation {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-xl);
+  background: var(--secondary-bg);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+}
+
+.tab-button {
+  padding: var(--space-md) var(--space-xl);
+  border: none;
+  background: var(--tertiary-bg);
+  color: var(--text-secondary);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: var(--font-base);
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+  min-width: 160px;
+}
+
+.tab-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-primary);
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+.tab-button:hover::before {
+  left: 0;
+}
+
+.tab-button:hover {
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.tab-button.active {
+  background: var(--gradient-primary);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.tab-button.active::before {
+  left: 0;
+}
+
+/* Tab Content */
+.tab-content {
+  padding: var(--space-xl);
+  max-width: 1400px;
+  margin: 0 auto;
+  animation: fadeInUp 0.5s ease-out;
+}
